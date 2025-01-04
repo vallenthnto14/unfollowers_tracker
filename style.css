@@ -1,16 +1,19 @@
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background: url('asset/bg.jpg') no-repeat center center fixed;
+    background: url('asset/bg.jpg') no-repeat center center;
     background-size: cover;
-    height: 100vh;
+    background-attachment: fixed;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .background {
     width: 100%;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,6 +29,7 @@ body {
     width: 90%;
     max-width: 400px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
 }
 
 h1 {
