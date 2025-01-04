@@ -3,12 +3,14 @@ body {
     font-family: 'Poppins', sans-serif;
     background: url('asset/bg.jpg') no-repeat center center fixed;
     background-size: cover;
-    overflow: hidden;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .background {
-    height: 100vh;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
