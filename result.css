@@ -1,0 +1,134 @@
+/* General styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: url('asset/bg.jpg') no-repeat center center fixed; 
+    background-size: cover;
+    min-height: 100vh;
+    overflow-x: hidden; 
+    scroll-behavior: smooth; 
+}
+
+
+.card {
+    max-width: 800px;
+    margin: auto;
+    margin-bottom: 40px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.card-header {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    position: relative; 
+    padding: 20px;
+    text-align: center;
+}
+
+.card-header h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    flex-grow: 1; 
+    text-align: center; 
+}
+
+.back-btn {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 5px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    transition: background 0.3s ease-in-out;
+}
+
+.back-btn:hover {
+    background-color: #c82333;
+}
+
+.card-body p {
+    margin: 15px;
+    font-size: 15px;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 10px 15px;
+    transition: background 0.3s ease-in-out;
+}
+
+.list-group-item:hover {
+    background-color: #f0f8ff;
+}
+
+.username {
+    font-weight: 600;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.list-group-item .btn-info {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    font-weight: 600;
+    color: #fff;
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+.list-group-item .btn-info:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.number {
+    margin-right: 10px;
+    font-weight: 600;
+    color: #555;
+}
+
+@media (max-width: 576px) {
+    .card-header {
+        flex-wrap: nowrap; 
+    }
+
+    .card-header h1 {
+        font-size: 18px; 
+        text-align: center;
+    }
+
+    .back-btn {
+        font-size: 12px;
+        right: 10px; 
+    }
+}
+
+@media (min-width: 1200px) {
+    .card {
+        max-width: 70%;
+    }
+}
