@@ -1,9 +1,10 @@
-/* General styles */
+
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
     background: url('asset/bg.jpg') no-repeat center center fixed; 
     background-size: cover;
+    background-attachment: fixed;
     min-height: 100vh;
     overflow-x: hidden; 
     scroll-behavior: smooth; 
