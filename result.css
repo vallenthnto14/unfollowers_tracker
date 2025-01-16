@@ -95,7 +95,7 @@ body {
 
 .username {
     font-weight: 600;
-    font-size: 12px;
+    font-size: 10px; /* Mengurangi ukuran font username */
     color: #333;
     white-space: nowrap; /* Menghindari teks membungkus ke baris berikutnya */
     overflow: hidden; /* Menyembunyikan teks yang terlalu panjang */
@@ -142,7 +142,7 @@ body {
     }
 
     .username {
-        font-size: 10px;
+        font-size: 8px;
     }
 
     .btn-info {
