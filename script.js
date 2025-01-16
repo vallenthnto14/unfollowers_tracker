@@ -19,8 +19,14 @@ document.getElementById('unfollowersForm').addEventListener('submit', async func
 
         const unfollowers = following.filter(user => !followers.includes(user));
 
-        localStorage.setItem('unfollowers', JSON.stringify(unfollowers));
+        // Save unfollowers data to localStorage
+        const unfollowersData = unfollowers.map(username => ({
+            username,
+            profileLink: `https://www.instagram.com/${username}/`,
+        }));
+        localStorage.setItem('unfollowers', JSON.stringify(unfollowersData));
 
+        // Redirect to result.html
         window.location.href = 'result.html';
     } catch (error) {
         console.error('Error processing files:', error.message);
@@ -80,4 +86,42 @@ function extractFromHTML(content) {
         console.error('Invalid HTML structure:', error.message);
         return null;
     }
+}
+
+// Handle result.html logic
+if (window.location.pathname.endsWith('result.html')) {
+    document.addEventListener('DOMContentLoaded', () => {
+        const unfollowers = JSON.parse(localStorage.getItem('unfollowers')) || [];
+        const unfollowersList = document.getElementById('unfollowersList');
+
+        if (unfollowers.length === 0) {
+            unfollowersList.innerHTML = '<li class="list-group-item text-center">No data available</li>';
+        } else {
+            unfollowers.forEach(({ username, profileLink }) => {
+                const listItem = document.createElement('li');
+                listItem.className = 'list-group-item d-flex justify-content-between align-items-center';
+                
+                const usernameSpan = document.createElement('span');
+                usernameSpan.textContent = username;
+
+                const profileButton = document.createElement('a');
+                profileButton.href = profileLink;
+                profileButton.textContent = 'View Profile';
+                profileButton.className = 'btn btn-info';
+                profileButton.target = '_blank';
+
+                listItem.appendChild(usernameSpan);
+                listItem.appendChild(profileButton);
+
+                unfollowersList.appendChild(listItem);
+            });
+        }
+
+        // Attach logout functionality
+        document.getElementById('logoutBtn').addEventListener('click', () => {
+            localStorage.clear(); // Clear all stored data
+            alert('You have successfully logged out. All uploaded data has been cleared.');
+            window.location.href = 'index.html'; // Redirect to index.html
+        });
+    });
 }
