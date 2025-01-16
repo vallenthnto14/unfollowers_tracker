@@ -6,7 +6,6 @@
 }
 
 body {
-    margin: 0;
     font-family: 'Poppins', sans-serif;
     background: url('asset/bg.jpg') no-repeat center center;
     background-size: cover;
@@ -89,13 +88,15 @@ body {
     transition: background 0.3s ease-in-out;
 }
 
+/* Efek hover untuk item daftar */
 .list-group-item:hover {
     background-color: #f0f8ff;
 }
 
+/* Styling untuk username */
 .username {
     font-weight: 600;
-    font-size: 10px;
+    font-size: 14px;
     color: #333;
     white-space: nowrap;
     overflow: hidden;
@@ -105,6 +106,7 @@ body {
     flex-grow: 1;
 }
 
+/* Styling untuk tombol */
 .btn-info {
     background-color: #0d6efd;
     border-color: #0d6efd;
@@ -138,16 +140,21 @@ body {
     }
 
     .list-group-item {
-        padding: 8px 10px;
+        flex-direction: column; /* Susun vertikal */
+        align-items: flex-start; /* Rata kiri */
+        padding: 10px;
     }
 
-    /* Ukuran font username lebih kecil pada perangkat kecil */
     .username {
-        font-size: 8px; /* Ukuran font kecil untuk username di perangkat mobile */
+        font-size: 8px; /* Ukuran font lebih kecil */
+        width: 100%; /* Full width */
+        margin-bottom: 5px; /* Beri jarak dengan tombol */
     }
 
     .btn-info {
-        font-size: 10px;
-        padding: 4px 6px;
+        width: 100%; /* Tombol full width */
+        text-align: center;
+        font-size: 12px;
+        padding: 6px 10px;
     }
 }
