@@ -1,42 +1,48 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background: url('asset/bg.jpg') no-repeat center center fixed; 
+    background: url('asset/bg.jpg') no-repeat center center fixed;
     background-size: cover;
     background-attachment: fixed;
     height: 100%;
-    overflow-x: hidden; 
-    scroll-behavior: smooth; 
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
-
 .card {
+    width: 90%;
     max-width: 800px;
-    margin: auto;
-    margin-bottom: 40px;
+    margin: 20px auto;
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
 }
 
-
+/* Card Header */
 .card-header {
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
-    position: relative; 
+    position: relative;
     padding: 20px;
     text-align: center;
+    flex-wrap: wrap; /* Responsif untuk layar kecil */
 }
 
 .card-header h1 {
-    margin: 0;
     font-size: 24px;
     font-weight: 700;
-    flex-grow: 1; 
-    text-align: center; 
+    margin: 0 auto;
+    text-align: center;
 }
 
 .back-btn {
@@ -44,7 +50,7 @@ body {
     right: 20px;
     top: 50%;
     transform: translateY(-50%);
-    padding: 6px 12px;
+    padding: 8px 16px;
     font-size: 14px;
     font-weight: 600;
     border-radius: 5px;
@@ -58,21 +64,22 @@ body {
     background-color: #c82333;
 }
 
+/* Card Body */
 .card-body p {
     margin: 15px;
-    font-size: 15px;
+    font-size: 16px;
     text-align: center;
     line-height: 1.6;
 }
 
+/* List Group Items */
 .list-group-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
     padding: 10px 15px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
     transition: background 0.3s ease-in-out;
 }
 
@@ -112,24 +119,67 @@ body {
     color: #555;
 }
 
+/* Media Queries */
 @media (max-width: 576px) {
-    .card-header {
-        flex-wrap: nowrap; 
+    body {
+        background-attachment: scroll; /* Disable fixed for better performance */
+    }
+
+    .card {
+        padding: 15px;
+        width: 95%; /* Gunakan seluruh lebar layar */
     }
 
     .card-header h1 {
-        font-size: 18px; 
+        font-size: 20px;
         text-align: center;
     }
 
     .back-btn {
         font-size: 12px;
-        right: 10px; 
+        padding: 6px 12px;
+        right: 10px; /* Lebih kecil untuk layar ponsel */
+    }
+
+    .list-group-item {
+        flex-wrap: wrap; /* Membungkus konten di layar kecil */
+    }
+
+    .username {
+        width: 100%; /* Isi penuh layar */
+        margin-right: 0;
+    }
+
+    .list-group-item .btn-info {
+        width: 100%; /* Tombol penuh di layar kecil */
+        margin-top: 10px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .card {
+        max-width: 90%;
+    }
+
+    .card-header h1 {
+        font-size: 22px;
+    }
+
+    .list-group-item .btn-info {
+        width: auto;
     }
 }
 
 @media (min-width: 1200px) {
     .card {
         max-width: 70%;
+    }
+
+    .card-header h1 {
+        font-size: 26px;
+    }
+
+    .list-group-item {
+        padding: 15px 20px;
     }
 }
