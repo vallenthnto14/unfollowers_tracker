@@ -23,12 +23,12 @@ body {
     justify-content: center;
     align-items: center;
     padding: 20px;
-    overflow-y: auto; /* Aktifkan scrolling jika daftar panjang */
+    overflow-y: auto;
 }
 
 .card {
     max-width: 800px;
-    width: 100%; /* Pastikan kartu memenuhi lebar di perangkat kecil */
+    width: 100%;
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
     overflow: hidden;
@@ -69,8 +69,8 @@ body {
 
 .card-body {
     padding: 20px;
-    overflow-y: auto; /* Aktifkan scrolling dalam body jika daftar terlalu panjang */
-    max-height: 400px; /* Batas tinggi untuk daftar */
+    overflow-y: auto;
+    max-height: 400px;
 }
 
 .list-group {
@@ -82,7 +82,7 @@ body {
 .list-group-item {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Semua elemen sejajar secara horizontal */
+    align-items: center;
     padding: 10px 15px;
     border-bottom: 1px solid #ddd;
     background-color: #fff;
@@ -97,11 +97,12 @@ body {
     font-weight: 600;
     font-size: 12px;
     color: #333;
-    white-space: nowrap; /* Hindari teks turun ke bawah */
-    overflow: hidden; /* Potong teks yang panjang */
-    text-overflow: ellipsis; /* Tambahkan ellipsis (...) */
-    flex-grow: 1;
-    margin-right: 10px; /* Jarak antara username dan tombol */
+    white-space: nowrap; /* Menghindari teks membungkus ke baris berikutnya */
+    overflow: hidden; /* Menyembunyikan teks yang terlalu panjang */
+    text-overflow: ellipsis; /* Menambahkan elipsis (...) ketika teks terlalu panjang */
+    max-width: calc(100% - 90px); /* Memberi ruang untuk tombol "View Profil" */
+    margin-right: 10px;
+    flex-grow: 1; /* Memastikan username menggunakan ruang yang tersedia */
 }
 
 .btn-info {
@@ -112,9 +113,8 @@ body {
     padding: 6px 10px;
     font-size: 12px;
     border-radius: 5px;
-    text-align: center;
     transition: background 0.3s ease-in-out;
-    flex-shrink: 0; /* Pastikan tombol tidak berubah ukuran */
+    flex-shrink: 0; /* Menjaga tombol tetap pada ukuran aslinya */
 }
 
 .btn-info:hover {
