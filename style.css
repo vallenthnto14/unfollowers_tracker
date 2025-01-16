@@ -1,4 +1,4 @@
-/* Reset CSS untuk memastikan konsistensi di semua browser */
+/* Reset CSS */
 * {
     margin: 0;
     padding: 0;
@@ -6,10 +6,11 @@
 }
 
 body {
+    margin: 0;
     font-family: 'Poppins', sans-serif;
     background: url('asset/bg.jpg') no-repeat center center;
     background-size: cover;
-    background-attachment: scroll;
+    background-attachment: scroll; /* Menghilangkan efek fixed background */
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -22,7 +23,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px; /* Untuk memberi ruang di layar kecil */
 }
 
 .form-container {
@@ -35,21 +35,33 @@ body {
     width: 90%;
     max-width: 400px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Untuk memastikan teks dan elemen sejajar */
+    text-align: left; /* Pastikan isi form rata kiri */
 }
 
 h1 {
     font-weight: 700;
     font-size: 24px;
-    margin-bottom: 20px;
+    text-align: center;
+}
+
+label {
+    display: block; /* Membuat label berada di baris baru */
+    text-align: left; /* Pastikan teks label rata kiri */
+    margin-bottom: 5px; /* Beri jarak antara label dan input */
+    font-weight: 500; /* Tambahkan sedikit ketebalan untuk visibilitas */
+    font-size: 14px; /* Ukuran font label */
+}
+
+input[type="file"] {
+    font-size: 14px; /* Ukuran font input */
 }
 
 .btn-primary {
     background-color: #0d6efd;
     border: none;
     width: 100%;
-    font-size: 16px;
     padding: 10px 0;
+    font-size: 16px;
 }
 
 .btn-primary:hover {
@@ -61,14 +73,9 @@ h1 {
     font-style: italic;
     color: #aaa;
     font-weight: 300;
-    margin-top: 20px;
+    text-align: center;
 }
 
-input[type="file"] {
-    font-size: 14px;
-}
-
-/* Media Query untuk layar kecil (ponsel) */
 @media (max-width: 576px) {
     h1 {
         font-size: 20px;
@@ -76,35 +83,11 @@ input[type="file"] {
 
     .form-container {
         padding: 20px 10px;
-        width: 100%; /* Gunakan seluruh lebar layar */
+        width: 100%;
     }
 
     .btn-primary {
         font-size: 14px;
         padding: 8px 0;
-    }
-}
-
-/* Media Query untuk tablet */
-@media (min-width: 577px) and (max-width: 992px) {
-    h1 {
-        font-size: 22px;
-    }
-
-    .form-container {
-        padding: 30px 15px;
-        width: 80%; /* Sedikit lebih lebar untuk tablet */
-    }
-
-    .btn-primary {
-        font-size: 15px;
-        padding: 10px 0;
-    }
-}
-
-/* Media Query untuk layar besar (desktop) */
-@media (min-width: 993px) {
-    .form-container {
-        width: 50%; /* Tampil lebih besar di layar besar */
     }
 }
