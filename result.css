@@ -40,7 +40,6 @@ body {
     justify-content: space-between; /* Pastikan tombol tidak menabrak judul */
     align-items: center;
     padding: 20px;
-    text-align: center;
     background-color: #f8f9fa;
 }
 
@@ -96,6 +95,8 @@ body {
     color: #555;
     margin-right: 10px; /* Beri jarak antar elemen */
     flex-shrink: 0; /* Jangan biarkan elemen mengecil */
+    width: 5%; /* Konsisten ukuran */
+    text-align: center; /* Tengah angka */
 }
 
 .username {
@@ -143,13 +144,13 @@ body {
     }
 
     .list-group-item {
-        flex-wrap: wrap; /* Izinkan item berbaris ke bawah di layar kecil */
+        flex-wrap: nowrap; /* Jaga agar elemen tetap sejajar */
     }
 
     .number,
     .username,
     .btn-info {
-        margin-bottom: 5px; /* Beri jarak antar elemen */
+        margin-bottom: 0; /* Hilangkan jarak vertikal */
     }
 
     .username {
