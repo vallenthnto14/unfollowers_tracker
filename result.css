@@ -22,7 +22,6 @@ body {
     justify-content: center;
     align-items: center;
     padding: 20px;
-    overflow-y: auto;
 }
 
 .card {
@@ -68,8 +67,7 @@ body {
 
 .card-body {
     padding: 20px;
-    overflow-y: auto;
-    max-height: 400px;
+    overflow: hidden; /* Menghilangkan scroll dalam card */
 }
 
 .list-group {
@@ -86,6 +84,9 @@ body {
     border-bottom: 1px solid #ddd;
     background-color: #fff;
     transition: background 0.3s ease-in-out;
+    white-space: nowrap; /* Mencegah teks username turun ke baris baru */
+    overflow: hidden; /* Menghindari overflow */
+    text-overflow: ellipsis; /* Memotong teks yang terlalu panjang */
 }
 
 /* Efek hover untuk item daftar */
@@ -98,12 +99,11 @@ body {
     font-weight: 600;
     font-size: 14px;
     color: #333;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: calc(100% - 90px);
-    margin-right: 10px;
-    flex-grow: 1;
+    overflow: hidden; /* Menghindari overflow */
+    text-overflow: ellipsis; /* Tambahkan elipsis jika teks terlalu panjang */
+    white-space: nowrap; /* Pastikan teks tetap satu baris */
+    max-width: 70%; /* Batasi lebar username agar tidak melebihi card */
+    margin-right: 10px; /* Tambahkan jarak antara username dan tombol */
 }
 
 /* Styling untuk tombol */
@@ -143,12 +143,16 @@ body {
         flex-direction: column; /* Susun vertikal */
         align-items: flex-start; /* Rata kiri */
         padding: 10px;
+        white-space: normal; /* Izinkan teks username turun ke baris baru */
     }
 
     .username {
         font-size: 8px; /* Ukuran font lebih kecil */
         width: 100%; /* Full width */
         margin-bottom: 5px; /* Beri jarak dengan tombol */
+        margin-right: 0; /* Hilangkan margin kanan di layar kecil */
+        white-space: normal; /* Biarkan teks turun ke baris baru di layar kecil */
+        overflow-wrap: break-word; /* Pastikan teks panjang bisa dipisah */
     }
 
     .btn-info {
