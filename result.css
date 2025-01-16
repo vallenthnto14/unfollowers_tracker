@@ -18,7 +18,7 @@ body {
 
 .background {
     width: 100%;
-    min-height: 100vh; /* Pastikan latar belakang penuh */
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,7 +37,7 @@ body {
 
 .card-header {
     display: flex;
-    justify-content: space-between; /* Pastikan tombol tidak menabrak judul */
+    justify-content: space-between;
     align-items: center;
     padding: 20px;
     background-color: #f8f9fa;
@@ -61,7 +61,6 @@ body {
     border: none;
     cursor: pointer;
     transition: background 0.3s ease-in-out;
-    z-index: 10; /* Pastikan tombol tidak tertutup elemen lain */
 }
 
 .back-btn:hover {
@@ -81,10 +80,9 @@ body {
 }
 
 .list-group-item {
-    display: grid; /* Gunakan grid layout */
-    grid-template-columns: 5% auto 120px; /* Atur kolom: nomor, username, tombol */
-    align-items: center; /* Pastikan semua item berada di tengah secara vertikal */
-    gap: 10px; /* Jarak antar elemen */
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Semua elemen sejajar secara horizontal */
     padding: 10px 15px;
     border-bottom: 1px solid #ddd;
     background-color: #fff;
@@ -95,19 +93,15 @@ body {
     background-color: #f0f8ff;
 }
 
-.number {
-    font-weight: 600;
-    color: #555;
-    text-align: center;
-}
-
 .username {
     font-weight: 600;
-    font-size: 12px; /* Perkecil ukuran teks */
+    font-size: 12px;
     color: #333;
-    overflow: hidden;
-    text-overflow: ellipsis;
     white-space: nowrap; /* Hindari teks turun ke bawah */
+    overflow: hidden; /* Potong teks yang panjang */
+    text-overflow: ellipsis; /* Tambahkan ellipsis (...) */
+    flex-grow: 1;
+    margin-right: 10px; /* Jarak antara username dan tombol */
 }
 
 .btn-info {
@@ -115,11 +109,12 @@ body {
     border-color: #0d6efd;
     font-weight: 600;
     color: #fff;
-    padding: 6px 8px; /* Sesuaikan ukuran tombol */
-    font-size: 12px; /* Perkecil ukuran teks */
+    padding: 6px 10px;
+    font-size: 12px;
     border-radius: 5px;
     text-align: center;
     transition: background 0.3s ease-in-out;
+    flex-shrink: 0; /* Pastikan tombol tidak berubah ukuran */
 }
 
 .btn-info:hover {
@@ -143,20 +138,15 @@ body {
     }
 
     .list-group-item {
-        grid-template-columns: 10% auto 100px; /* Sesuaikan untuk perangkat kecil */
-        gap: 5px; /* Kurangi jarak antar elemen */
-    }
-
-    .number {
-        font-size: 10px; /* Perkecil ukuran teks */
+        padding: 8px 10px;
     }
 
     .username {
-        font-size: 10px; /* Perkecil ukuran teks */
+        font-size: 10px;
     }
 
     .btn-info {
-        font-size: 10px; /* Perkecil ukuran tombol */
+        font-size: 10px;
         padding: 4px 6px;
     }
 }
