@@ -97,8 +97,9 @@ body {
     color: #333;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
     max-width: 70%;
+    word-wrap: break-word; /* Memastikan teks panjang terputus dengan benar */
+    white-space: normal; /* Memungkinkan teks pindah ke baris baru */
 }
 
 /* Styling untuk tombol */
