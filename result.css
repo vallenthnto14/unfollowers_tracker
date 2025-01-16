@@ -95,11 +95,11 @@ body {
     font-weight: 600;
     font-size: 14px; /* Default ukuran font */
     color: #333;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 70%;
-    word-wrap: break-word; /* Memastikan teks panjang terputus dengan benar */
-    white-space: normal; /* Memungkinkan teks pindah ke baris baru */
+    word-wrap: break-word; /* Memastikan teks panjang terputus */
+    word-break: break-word; /* Memaksa pindah baris jika terlalu panjang */
+    white-space: normal; /* Memungkinkan teks berpindah ke baris baru */
+    overflow-wrap: break-word; /* Kompatibilitas tambahan */
+    width: 100%; /* Pastikan username mengambil lebar penuh item daftar */
 }
 
 /* Styling untuk tombol */
@@ -145,16 +145,15 @@ body {
     }
 
     .username {
-        font-size: 6px; /* Ukuran font lebih kecil untuk layar kecil */
-        width: 100%;
-        margin-bottom: 5px;
+        font-size: 12px; /* Ukuran font lebih kecil */
+        width: 100%; /* Lebar penuh */
         white-space: normal;
         overflow-wrap: break-word;
     }
 
     .btn-info {
         width: auto; /* Tombol tidak full width */
-        font-size: 8px; /* Ukuran font lebih kecil */
+        font-size: 10px; /* Ukuran font lebih kecil */
         padding: 4px 6px; /* Padding lebih kecil */
     }
 }
