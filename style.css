@@ -1,5 +1,11 @@
-body {
+/* Reset CSS untuk memastikan konsistensi di semua browser */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     font-family: 'Poppins', sans-serif;
     background: url('asset/bg.jpg') no-repeat center center;
     background-size: cover;
@@ -16,6 +22,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px; /* Untuk memberi ruang di layar kecil */
 }
 
 .form-container {
@@ -28,18 +35,21 @@ body {
     width: 90%;
     max-width: 400px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Untuk memastikan teks dan elemen sejajar */
 }
 
 h1 {
     font-weight: 700;
     font-size: 24px;
-    text-align: center;
+    margin-bottom: 20px;
 }
 
 .btn-primary {
     background-color: #0d6efd;
     border: none;
     width: 100%;
+    font-size: 16px;
+    padding: 10px 0;
 }
 
 .btn-primary:hover {
@@ -51,9 +61,14 @@ h1 {
     font-style: italic;
     color: #aaa;
     font-weight: 300;
-    text-align: center;
+    margin-top: 20px;
 }
 
+input[type="file"] {
+    font-size: 14px;
+}
+
+/* Media Query untuk layar kecil (ponsel) */
 @media (max-width: 576px) {
     h1 {
         font-size: 20px;
@@ -61,5 +76,35 @@ h1 {
 
     .form-container {
         padding: 20px 10px;
+        width: 100%; /* Gunakan seluruh lebar layar */
+    }
+
+    .btn-primary {
+        font-size: 14px;
+        padding: 8px 0;
+    }
+}
+
+/* Media Query untuk tablet */
+@media (min-width: 577px) and (max-width: 992px) {
+    h1 {
+        font-size: 22px;
+    }
+
+    .form-container {
+        padding: 30px 15px;
+        width: 80%; /* Sedikit lebih lebar untuk tablet */
+    }
+
+    .btn-primary {
+        font-size: 15px;
+        padding: 10px 0;
+    }
+}
+
+/* Media Query untuk layar besar (desktop) */
+@media (min-width: 993px) {
+    .form-container {
+        width: 50%; /* Tampil lebih besar di layar besar */
     }
 }
