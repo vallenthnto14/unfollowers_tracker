@@ -8,9 +8,9 @@
 body {
     font-family: 'Poppins', sans-serif;
     background: url('asset/bg.jpg') no-repeat center center;
-    background-size: cover;
-    background-attachment: scroll;
-    height: 100%;
+    background-size: cover; /* Pastikan background tetap penuh */
+    background-attachment: scroll; /* Latar belakang tetap saat scroll */
+    height: 100vh; /* Gunakan tinggi penuh */
     overflow-x: hidden;
     scroll-behavior: smooth;
 }
@@ -87,6 +87,7 @@ body {
     white-space: nowrap; /* Mencegah teks username turun ke baris baru */
     overflow: hidden; /* Menghindari overflow */
     text-overflow: ellipsis; /* Memotong teks yang terlalu panjang */
+    gap: 10px; /* Menambahkan jarak antara username dan tombol */
 }
 
 /* Efek hover untuk item daftar */
@@ -103,7 +104,6 @@ body {
     text-overflow: ellipsis; /* Tambahkan elipsis jika teks terlalu panjang */
     white-space: nowrap; /* Pastikan teks tetap satu baris */
     max-width: 70%; /* Batasi lebar username agar tidak melebihi card */
-    margin-right: 10px; /* Tambahkan jarak antara username dan tombol */
 }
 
 /* Styling untuk tombol */
@@ -119,9 +119,11 @@ body {
     flex-shrink: 0;
 }
 
+/* Hover effect: teks putih dan background biru lebih gelap */
 .btn-info:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
+    background-color: #004080;
+    border-color: #004080;
+    color: white !important; /* Pastikan teks tetap putih */
 }
 
 /* Media Query untuk perangkat kecil */
@@ -144,13 +146,13 @@ body {
         align-items: flex-start; /* Rata kiri */
         padding: 10px;
         white-space: normal; /* Izinkan teks username turun ke baris baru */
+        gap: 5px; /* Jarak kecil di tampilan mobile */
     }
 
     .username {
         font-size: 8px; /* Ukuran font lebih kecil */
         width: 100%; /* Full width */
         margin-bottom: 5px; /* Beri jarak dengan tombol */
-        margin-right: 0; /* Hilangkan margin kanan di layar kecil */
         white-space: normal; /* Biarkan teks turun ke baris baru di layar kecil */
         overflow-wrap: break-word; /* Pastikan teks panjang bisa dipisah */
     }
