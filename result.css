@@ -7,10 +7,8 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: url('asset/bg.jpg') no-repeat center center;
-    background-size: cover; /* Pastikan background tetap penuh */
-    background-attachment: scroll; /* Latar belakang tetap saat scroll */
-    height: 100vh; /* Gunakan tinggi penuh */
+    background-color: #8A2BE2; /* Warna latar belakang ungu */
+    height: 100vh;
     overflow-x: hidden;
     scroll-behavior: smooth;
 }
@@ -84,9 +82,6 @@ body {
     border-bottom: 1px solid #ddd;
     background-color: #fff;
     transition: background 0.3s ease-in-out;
-    white-space: nowrap; /* Mencegah teks username turun ke baris baru */
-    overflow: hidden; /* Menghindari overflow */
-    text-overflow: ellipsis; /* Memotong teks yang terlalu panjang */
     gap: 10px; /* Menambahkan jarak antara username dan tombol */
 }
 
@@ -98,12 +93,12 @@ body {
 /* Styling untuk username */
 .username {
     font-weight: 600;
-    font-size: 14px;
+    font-size: 14px; /* Default ukuran font */
     color: #333;
-    overflow: hidden; /* Menghindari overflow */
-    text-overflow: ellipsis; /* Tambahkan elipsis jika teks terlalu panjang */
-    white-space: nowrap; /* Pastikan teks tetap satu baris */
-    max-width: 70%; /* Batasi lebar username agar tidak melebihi card */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 70%;
 }
 
 /* Styling untuk tombol */
@@ -145,22 +140,20 @@ body {
         flex-direction: column; /* Susun vertikal */
         align-items: flex-start; /* Rata kiri */
         padding: 10px;
-        white-space: normal; /* Izinkan teks username turun ke baris baru */
         gap: 5px; /* Jarak kecil di tampilan mobile */
     }
 
     .username {
-        font-size: 8px; /* Ukuran font lebih kecil */
-        width: 100%; /* Full width */
-        margin-bottom: 5px; /* Beri jarak dengan tombol */
-        white-space: normal; /* Biarkan teks turun ke baris baru di layar kecil */
-        overflow-wrap: break-word; /* Pastikan teks panjang bisa dipisah */
+        font-size: 6px; /* Ukuran font lebih kecil untuk layar kecil */
+        width: 100%;
+        margin-bottom: 5px;
+        white-space: normal;
+        overflow-wrap: break-word;
     }
 
     .btn-info {
-        width: 100%; /* Tombol full width */
-        text-align: center;
-        font-size: 12px;
-        padding: 6px 10px;
+        width: auto; /* Tombol tidak full width */
+        font-size: 8px; /* Ukuran font lebih kecil */
+        padding: 4px 6px; /* Padding lebih kecil */
     }
 }
