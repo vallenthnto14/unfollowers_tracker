@@ -1,4 +1,4 @@
-document.getElementById('unfollowersForm').addEventListener('submit', async function (e) {
+document.getElementById('unfollowersForm')?.addEventListener('submit', async function (e) {
     e.preventDefault();
 
     const followersFile = document.getElementById('followersFile').files[0];
@@ -25,6 +25,9 @@ document.getElementById('unfollowersForm').addEventListener('submit', async func
             profileLink: `https://www.instagram.com/${username}/`,
         }));
         localStorage.setItem('unfollowers', JSON.stringify(unfollowersData));
+
+        // Debugging: Ensure data is saved correctly
+        console.log('Unfollowers saved to localStorage:', unfollowersData);
 
         // Redirect to result.html
         window.location.href = 'result.html';
@@ -67,6 +70,19 @@ function extractFromJSON(content) {
                     });
                 }
             });
+        } else {
+            // Attempt other possible formats
+            for (const key in data) {
+                if (Array.isArray(data[key])) {
+                    data[key].forEach(subItem => {
+                        if (subItem.string_list_data) {
+                            subItem.string_list_data.forEach(item => {
+                                if (item.value) result.push(item.value);
+                            });
+                        }
+                    });
+                }
+            }
         }
 
         return result;
@@ -88,10 +104,11 @@ function extractFromHTML(content) {
     }
 }
 
-// Handle result.html logic
 if (window.location.pathname.endsWith('result.html')) {
     document.addEventListener('DOMContentLoaded', () => {
         const unfollowers = JSON.parse(localStorage.getItem('unfollowers')) || [];
+        console.log('Unfollowers data:', unfollowers); // Debugging
+
         const unfollowersList = document.getElementById('unfollowersList');
 
         if (unfollowers.length === 0) {
@@ -100,7 +117,7 @@ if (window.location.pathname.endsWith('result.html')) {
             unfollowers.forEach(({ username, profileLink }) => {
                 const listItem = document.createElement('li');
                 listItem.className = 'list-group-item d-flex justify-content-between align-items-center';
-                
+
                 const usernameSpan = document.createElement('span');
                 usernameSpan.textContent = username;
 
@@ -117,11 +134,11 @@ if (window.location.pathname.endsWith('result.html')) {
             });
         }
 
-        // Attach logout functionality
+        // Logout functionality
         document.getElementById('logoutBtn').addEventListener('click', () => {
-            localStorage.clear(); // Clear all stored data
+            localStorage.clear();
             alert('You have successfully logged out. All uploaded data has been cleared.');
-            window.location.href = 'index.html'; // Redirect to index.html
+            window.location.href = 'index.html';
         });
     });
-}
+                                }
